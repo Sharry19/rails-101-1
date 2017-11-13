@@ -5,18 +5,19 @@ Rails.application.routes.draw do
       post :join
       post :quit
     end
-    resources :posts do
-        post :edit
-        post :destroy
-    end
+    resources :posts
   end
-    namespace :account do
+  namespace :account do
       resources :groups
       resources :posts
   end
-
+  resources :posts do
+    post :edit
+    post :destroy
+  end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'groups#index'
+  root 'posts#index'
 end
