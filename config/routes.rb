@@ -5,7 +5,10 @@ Rails.application.routes.draw do
       post :join
       post :quit
     end
-    resources :posts
+    resources :posts do
+        post :edit
+        post :destroy
+    end
   end
     namespace :account do
       resources :groups
